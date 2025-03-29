@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        'use strict'   //use strict mode to keep prevent from error  = 2015 (version ES6)  , sbse best version
+
+        var a= 7;
+        var b = 9;
+        var c = 'shivani'
+        var d = true
+        console.log(b);
+
+        //operator = typeof() is used for check which type of data is present 
+        console.log(typeof(a));     //number
+        console.log(typeof(c));     //string
+        console.log(typeof(d));     //boolean
+   
+
+        var f = null;               //null datatypes preserve for future
+        var e;                      // undefined = only declared not give any value
+        console.log(typeof(f));     //object type
+        console.log(typeof(e));     //  undefined type
+
+
+
+
+
+   //TYPE coercion = type conversion    = the automatic conversion of values from one data type to another,
+
+//    1. priority = String
+
+var a= "7";
+var b = 9;              // "9"
+console.log(a+b);      //79     // priority of int < priority of string       // or ye sirf + k liye bcz + is two types addtion and concatination , baaki sare operation perform hojayenge 
+
+//    2. priority = Number
+var a= 7;
+var b;         // b= 1 convert in number 
+console.log(a+b);   // 8.
+
+
+
+// number + undefined = NaN
+
+
+    </script>
+</body>
+</html>
