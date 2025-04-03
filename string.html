@@ -9,10 +9,10 @@
     
 
     <script>
- /*       let a = "This is string 1"
+       let a = "This- is string 1"
         let b = "This is string 2"
         console.log(a.length);                     //16 (count also space)
-        console.log(a.slice(8,14))                  //is
+        console.log(a.slice(8,14))                  //string
        document.write(a.concat(b))                 //document.write() is use for print on document rather than console                 // console.log(a.concat(b))      
        console.log(a.toUpperCase());               //THIS IS STRING 1
        console.log(a.toLowerCase());               // this is string 1
@@ -23,7 +23,7 @@
        console.log(a.trim())                        //This is string 1
        console.log(a.indexOf("h"))                   //1
        console.log(a.replace("string", "text"))      //This is text 1     //replace("previous string", "replaced string")                //This is string 1
-       console.log(a.split(""))
+       console.log(a.split("-"))                    // ['This', ' is string 1'] //seprator lgao ki kha se seprate krke array bnana h 
 
        let c = "Javascript is fun-loving and javascript is easy";
        console.log(c.replaceAll("javascript","Html"))    //Html is fun-loving and Html is easy 
@@ -59,20 +59,19 @@ console.log(str.toUpperCase()); // "HELLO WORLD"
 console.log(str.toLowerCase()); // "hello world"           */
 
 
-// 5. Finding Substrings (indexOf(), lastIndexOf(), includes(), startsWith(), endsWith())  ---------->>
+// 5. Finding Substrings (indexOf(), includes(), startsWith(), endsWith())  ---------->>
 /*let str = "Hello, welcome to JavaScript!";
 console.log(str.indexOf("JavaScript")); // 17
-console.log(str.lastIndexOf("o")); // 8
-console.log(str.includes("welcome")); // true
+// console.log(str.includes("welcome")); // true     //Yeh check karega ki string me "welcome" hai ya nahi.
 console.log(str.startsWith("Hello")); // true
 console.log(str.endsWith("!")); // true                */
 
 
 // 6. Extracting Substrings (slice(), substring(), substr())   ---------->>
-/*let str = "JavaScript";
-console.log(str.slice(0, 4)); // "Java"
-console.log(str.substring(4, 10)); // "Script"
-console.log(str.substr(4, 6)); // "Script" (deprecated)              */
+ /*let str = "JavaScript";
+ console.log(str.slice(0, 4)); // "Java"   //last wale se ek kam leta h 
+ console.log(str.substring(4, 10)); // "Script"
+ console.log(str.substr(4, 6));       // "Script"      //substr(start, length)              */
 
 
 // 7. Replacing Text (replace(), replaceAll())  --------->>
@@ -123,7 +122,7 @@ console.log(str.charCodeAt(0)); // 65 (ASCII value of 'A')               */
 
 
 // Template literals  --->> (``)
-console.log(alert(`Hello i m "Sid" and i m from 'bhopal'`))   // more readable and flexible way to work with strings. They are defined using backticks (``) instead of quotes kyonki js me "" ek baar hi chlta h or '' ye bhi isliye `` k andr likh lo hojayega.
+/*console.log(alert(`Hello i m "Sid" and i m from 'bhopal'`))   // more readable and flexible way to work with strings. They are defined using backticks (``) instead of quotes kyonki js me "" ek baar hi chlta h or '' ye bhi isliye `` k andr likh lo hojayega.
 console.log(`here I m shivani
 from bhopal`)
 document.write(`Hello i m <h1> "Sid" </h1> and i m from 'bhopal'`)
@@ -132,7 +131,7 @@ document.write(`Hello i m <h1> "Sid" </h1> and i m from 'bhopal'`)
 let name = "Alice";
 let age = 25;
 let message = `My name is ${name} and I am ${age} years old.`;   
-console.log(message);                                                //My name is Alice and I am 25 years old.
+console.log(message);   */                                             //My name is Alice and I am 25 years old.
 
 
 
