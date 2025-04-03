@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+ /*       let a = "This is string 1"
+        let b = "This is string 2"
+        console.log(a.length);                     //16 (count also space)
+        console.log(a.slice(8,14))                  //is
+       document.write(a.concat(b))                 //document.write() is use for print on document rather than console                 // console.log(a.concat(b))      
+       console.log(a.toUpperCase());               //THIS IS STRING 1
+       console.log(a.toLowerCase());               // this is string 1
+       document.write("<br>"+ a.toUpperCase())  
+       document.write("<br>"+ a.toLowerCase())
+       console.log(a.charAt(8))                     // s
+       console.log(a.charCodeAt(4))                 // 32
+       console.log(a.trim())                        //This is string 1
+       console.log(a.indexOf("h"))                   //1
+       console.log(a.replace("string", "text"))      //This is text 1     //replace("previous string", "replaced string")                //This is string 1
+       console.log(a.split(""))
+
+       let c = "Javascript is fun-loving and javascript is easy";
+       console.log(c.replaceAll("javascript","Html"))    //Html is fun-loving and Html is easy 
+       console.log(c.replace(/Javascript/gi,"Html"))    // we can also do with replace rather than replaceAll , by removing "" and add / /gi ----- Here g= global acess and ... use i after g for make case-sensitive        Html is fun-loving and Html is easy  */
+    
+   
+// Notes->> 
+// 1. Creating a String  ------------>>
+/*let str1 = "Hello";
+  let str2 = 'World';
+  let str3 = `JavaScript`;       // Also use Template literal */
+ 
+
+// 2. Concatenation (+ or .concat())  ---------->>
+/*let str1 = "Hello";
+let str2 = "World";
+let result = str1 + " " + str2;             // "Hello World"
+console.log(result);  
+
+let result2 = str1.concat(" ", str2);
+console.log(result2);            // "Hello World"   */
+
+
+// 3. Accessing Characters (charAt() or [])  --------->>
+/*let str = "JavaScript";
+console.log(str.charAt(0));       // "J"
+console.log(str[0]);                // "J"                 */
+
+
+// 4. Changing Case (toUpperCase() and toLowerCase())  ----------->>
+/*let str = "Hello World";
+console.log(str.toUpperCase()); // "HELLO WORLD"
+console.log(str.toLowerCase()); // "hello world"           */
+
+
+// 5. Finding Substrings (indexOf(), lastIndexOf(), includes(), startsWith(), endsWith())  ---------->>
+/*let str = "Hello, welcome to JavaScript!";
+console.log(str.indexOf("JavaScript")); // 17
+console.log(str.lastIndexOf("o")); // 8
+console.log(str.includes("welcome")); // true
+console.log(str.startsWith("Hello")); // true
+console.log(str.endsWith("!")); // true                */
+
+
+// 6. Extracting Substrings (slice(), substring(), substr())   ---------->>
+/*let str = "JavaScript";
+console.log(str.slice(0, 4)); // "Java"
+console.log(str.substring(4, 10)); // "Script"
+console.log(str.substr(4, 6)); // "Script" (deprecated)              */
+
+
+// 7. Replacing Text (replace(), replaceAll())  --------->>
+/*let str = "I love JavaScript";
+console.log(str.replace("JavaScript", "Python")); // "I love Python"
+console.log(str.replaceAll("o", "0")); // "I l0ve JavaScript"                    */
+
+
+// 8. Removing Whitespaces (trim(), trimStart(), trimEnd())  ----------->>
+/*let str = "   Hello World!   ";
+console.log(str.trim()); // "Hello World!"
+console.log(str.trimStart()); // "Hello World!   "
+console.log(str.trimEnd()); // "   Hello World!"                           */
+
+
+// 9. Splitting Strings (split())   ---------->>
+/*let str = "apple,banana,grape";
+let fruits = str.split(",");  //jisse upr seprate hoga usi ko niche likho usi k according array dega seprator k according
+console.log(fruits); // ["apple", "banana", "grape"]                     */
+
+
+// 10. Repeating a String (repeat())  ----------->>
+/*let str = "Hello ";
+console.log(str.repeat(3)); // "Hello Hello Hello "                          */
+
+
+// 11. Checking Character at Index (charCodeAt()) ---------->>
+/*let str = "ABC";
+console.log(str.charCodeAt(0)); // 65 (ASCII value of 'A')               */
+
+
+/* string method  ----------<><><><>
+
+        length
+        slice() or substring() 
+        concat()
+        replace()
+        toUpperCase()
+        toLowerCase()
+        trim() = remove wide space from the string . eg:-  "    hello   " => "hello"
+        replaceAll() = same matching ko replace krega pure js
+        charAt() = give particular string from given index no.
+        charCodeAt() = take indexing no. and us alphabet ki ascii value return krega
+        split() = divide a string into an array of substrings based on a specified separator.
+        indexof() = return index value  */
+
+
+
+
+// Template literals  --->> (``)
+console.log(alert(`Hello i m "Sid" and i m from 'bhopal'`))   // more readable and flexible way to work with strings. They are defined using backticks (``) instead of quotes kyonki js me "" ek baar hi chlta h or '' ye bhi isliye `` k andr likh lo hojayega.
+console.log(`here I m shivani
+from bhopal`)
+document.write(`Hello i m <h1> "Sid" </h1> and i m from 'bhopal'`)
+
+// With Template Literals rather than Using (+) ------->>>
+let name = "Alice";
+let age = 25;
+let message = `My name is ${name} and I am ${age} years old.`;   
+console.log(message);                                                //My name is Alice and I am 25 years old.
+
+
+
+/* 1st use => support Single Quotes('') and double Quotes("")
+   2nd use => support multiple line strings
+   3rd use => help in to support of html tags in js
+   4th use => Direct access variables without using of + or concatination */
+    </script>
+</body>
+</html>
