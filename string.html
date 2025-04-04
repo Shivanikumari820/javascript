@@ -121,13 +121,22 @@ console.log(str.charCodeAt(0)); // 65 (ASCII value of 'A')               */
 
 
 
-// Template literals  --->> (``)
-/*console.log(alert(`Hello i m "Sid" and i m from 'bhopal'`))   // more readable and flexible way to work with strings. They are defined using backticks (``) instead of quotes kyonki js me "" ek baar hi chlta h or '' ye bhi isliye `` k andr likh lo hojayega.
-console.log(`here I m shivani
+// Template literals  --->> (``)   ==>> Template literals (also known as template strings) are a more flexible and readable way to work with strings in JavaScript. They are created using backticks (`) instead of single (') or double (") quotes.
+/*Key Features of Template Literals:
+
+1️⃣ Support both Single (') and Double (") Quotes inside strings
+console.log(`Hello, I'm "Sid" and I'm from 'Bhopal'.`);
+
+2️⃣ Multiline Strings:  = Template literals allow writing strings on multiple lines without using escape characters (\n).
+
+console.log(`here I m 
+shivani
 from bhopal`)
+
+3️⃣ HTML Integration in Strings  = You can write HTML tags directly in template literals.
 document.write(`Hello i m <h1> "Sid" </h1> and i m from 'bhopal'`)
 
-// With Template Literals rather than Using (+) ------->>>
+4️⃣ Variable Interpolation (String + Variables without +) = Insert variables directly inside strings using ${variable} syntax.
 let name = "Alice";
 let age = 25;
 let message = `My name is ${name} and I am ${age} years old.`;   

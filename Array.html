@@ -6,11 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- In C++ ,  int a = [1,2,3,4]
+    <!-- In C++ ,  int a = {1,2,3,4}
  
    but in js, int a = [1,2,3,"s",2.2,"sivani" ];     ==>  It is an ordered collection of elements and can hold different data types (numbers, strings, objects, etc.).-->
-<script>
-  console.log(alert(`Hello i m "Sid" and i m from 'bhopal'`))
-</script>
+
+   <script>
+    let Fruits = ["Apple","Banana", "Mango",123,"Grapes", 12.1]   //Array
+    
+    console.log(Fruits[2])      //Access of an Array by index no.    //Mango
+    console.log(Fruits.length);     //6
+    Fruits.pop()                //Remove last element from an array 
+    console.log(Fruits)         //output: ['Apple', 'Banana', 'Mango', 123, 'Grapes']
+    Fruits.push("Guava",12)     //Adds last element from an array 
+    console.log(Fruits)         //output: ['Apple', 'Banana', 'Mango', 123, 'Grapes', 'Guava']
+    Fruits.shift()              //remove the first element
+    console.log(Fruits)         //output: ['Banana', 'Mango', 123, 'Grapes', 'Guava', 12]
+    Fruits.unshift("Coconut")   //adds a new element in begining
+    console.log(Fruits)        //output: ['Coconut', 'Banana', 'Mango', 123, 'Grapes', 'Guava', 12]
+    let a = ["He","v",1];
+    let b = ["World","t",3];
+    let result = a.concat(b)          
+    console.log(result);       //['He', 'v', 1, 'World', 't', 3]
+
+
+
+/*   Method in Array in js ====>>
+    length
+    Pop()=remove from last
+    push()= Adds the last element 
+    shift()=remove the first element
+    unshift()=adds a new element in begining
+    splice() = add anything in middle  */
+   </script>
 </body>
 </html>
