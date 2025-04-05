@@ -6,7 +6,7 @@ function shivani() {
     // window.prompt("How old are you", " ")
 
 
-//    Example
+//  Example
 let confirmans = window.alert("Are you ok")
 console.log(confirmans)
 

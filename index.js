@@ -71,8 +71,6 @@ function keyword(){
 
 
 
-
-
 // hoisting = it is a concept in js in which variable declaration go on top just below the function name 
 //===>>> var x; ko JavaScript internally upar le jata hai, lekin usko undefined assign karta hai jab tak usko koi value na mile.
 console.log(x); // Output: undefined
@@ -81,8 +79,8 @@ console.log(x); // Output: 10
 
 
 /* 1.    var k case me hoisting support krti h 
-2.       let k case me hoisting support nhi krti h 
-3.       const k case me hoisting support nhi  krti h  */
+   2.       let k case me hoisting support nhi krti h 
+   3.       const k case me hoisting support nhi  krti h  */
 
 
 function shivani (){
