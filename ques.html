@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="checkAnswer()">click</button>
     <script>      
         function getSum() {
             
@@ -128,10 +129,28 @@
             //     default:
             //         alert("Please enter a valid number");
             // }
-  
-         }
-        getSum()
 
+
+
+//Ques.  Find total character in that prompt given by user        
+        let name = prompt("Enter your name");
+        let totalCharacters = name.length;
+         alert("Your name has " + totalCharacters + " characters.");
+ 
+
+
+         }
+        // getSum()
+
+// Ques. Give answer in alert that 4+3 is 7 or not            
+        function checkAnswer() {
+            let answer = prompt("What is 4 + 3?");
+            if (answer == 7) {
+                alert("Correct!");
+            } else {
+                alert("Wrong!");
+            }
+            }
     </script>
 </body>
 </html>
