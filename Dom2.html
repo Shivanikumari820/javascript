@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #myImg {
+      width: 200px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<img id="myImg" src="img.jpg" alt="Image">
+
+<button onclick="fun1()">Green</button>
+<button onclick="fun2()">Orange</button>
+<button onclick="fun3()">Reset</button>
+
+<script>
+  function fun1() {
+    document.querySelector('#myImg').src = "img2.jpg";
+  }
+
+  function fun2() {
+    document.querySelector('#myImg').src = "img3.jpg";
+  }
+
+  function fun3() {
+    document.querySelector('#myImg').src = "img.jpg";
+  }
+</script>
+
+</body>
+</html>
