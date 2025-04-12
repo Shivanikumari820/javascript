@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color:pink;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #174bc4;
+      padding: 60px 60px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 140, 255, 0.3);
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #00aaff;
+      letter-spacing: 1px;
+      font-size: 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    input {
+      padding: 14px;
+      font-size: 18px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      background-color: #1c2946;
+      color: white;
+      transition: border 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0099ff;
+    }
+
+    .error {
+      color: #ff4d4d;
+      font-size: 14px;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      height: 18px;
+    }
+
+    input .error-input {
+      border-color: #ff4d4d;
+    }
+
+    button {
+      padding: 14px;
+      font-size: 24px;
+      background-color: #0099ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      width: 50%;
+      align-self: center;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #007acc;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h2>Register Now</h2>
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Enter your name" />
+      <span class="error" id="err-name"></span>
+    </div>
+    <div class="form-group">
+      <input type="text" id="number" placeholder="Enter your number" />
+      <span class="error" id="err-number"></span>
+    </div>
+    <div class="form-group">
+      <input type="text" id="pass" placeholder="Enter password" />
+      <span class="error" id="err-pass"></span>
+    </div>
+    <div class="form-group">
+      <input type="password" id="co-pass" placeholder="Confirm password" />
+      <span class="error" id="err-copass"></span>
+    </div>
+    <button type="submit" onclick="return validate()">Submit</button>
+  </form>
+
+  <script src="form_validation.js"></script>
+</body>
+</html>
+
+
+<!--if error return false in js
