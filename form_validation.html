@@ -1,122 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Improved Form</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: sans-serif;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      background-color:pink;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 
-    form {
-      background-color: #174bc4;
-      padding: 60px 60px;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0, 140, 255, 0.3);
-      width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* form ko screen ke bich mein laaya */
+    background: black;
+    color: white;
+    height: 100vh;
+  }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 10px;
-      color: #00aaff;
-      letter-spacing: 1px;
-      font-size: 28px;
-    }
+  /* Background video */
+  .video-bg {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 70%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -4;
+}
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
 
-    input {
-      padding: 14px;
-      font-size: 18px;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      background-color: #1c2946;
-      color: white;
-      transition: border 0.2s;
-    }
+  /* Gradient overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: -3;
+  }
 
-    input:focus {
-      outline: none;
-      border-color: #0099ff;
-    }
+  /* Form container */
+  .form-container {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    width: 340px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
 
-    .error {
-      color: #ff4d4d;
-      font-size: 14px;
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-      height: 18px;
-    }
+  .form-container h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
 
-    input .error-input {
-      border-color: #ff4d4d;
-    }
+  .form-container input[type="text"],
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 4px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
 
-    button {
-      padding: 14px;
-      font-size: 24px;
-      background-color: #0099ff;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      width: 50%;
-      align-self: center;
-      transition: background-color 0.3s;
-    }
+  .form-container input[type="text"] {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
 
-    button:hover {
-      background-color: #007acc;
-    }
-  </style>
+  .form-container input[type="text"]::placeholder {
+    color: #eeeeee;
+  }
+
+  .form-container input[type="submit"] {
+    background: linear-gradient(to right, #673e10, #e6ae05);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 15px;
+  }
+
+  .form-container input[type="submit"]:hover {
+    background: linear-gradient(to right, #c4e605, #f2a500);
+  }
+
+  .form-container p {
+    margin: 0;
+    font-size: 13px;
+    color: #ff7070;
+    height: 14px;
+  }
+
+  #statusMsg {
+    text-align: center;
+    margin-top: 15px;
+    color: #90ffb3;
+    font-weight: 600;
+  }
+</style>
+
 </head>
 <body>
-  <form>
-    <h2>Register Now</h2>
-    <div class="form-group">
-      <input type="text" id="name" placeholder="Enter your name" />
-      <span class="error" id="err-name"></span>
-    </div>
-    <div class="form-group">
-      <input type="text" id="number" placeholder="Enter your number" />
-      <span class="error" id="err-number"></span>
-    </div>
-    <div class="form-group">
-      <input type="text" id="pass" placeholder="Enter password" />
-      <span class="error" id="err-pass"></span>
-    </div>
-    <div class="form-group">
-      <input type="password" id="co-pass" placeholder="Confirm password" />
-      <span class="error" id="err-copass"></span>
-    </div>
-    <button type="submit" onclick="return validate()">Submit</button>
-  </form>
+  <!-- Background Video -->
+  <video class="video-bg" autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
-  <script src="form_validation.js"></script>
+  <!-- Form -->
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <p id="errname"></p>
+      <input type="text" id="name" placeholder="Your Name" />
+
+      <p id="errnumber"></p>
+      <input type="text" id="number" placeholder="Your Number" />
+
+      <p id="erremail"></p>
+      <input type="text" id="email" placeholder="Your Email" />
+
+      <p id="errpass"></p>
+      <input type="text" id="password" placeholder="Your Password" />
+
+      <p id="errlogin"></p>
+      <input type="text" id="con-password" placeholder="Confirm Password" />
+
+      <input type="submit" value="Login" onclick="return val()">
+    </form>
+    <p id="statusMsg"></p>
+  </div>
+
+  <!-- JS -->
+  <script>
+    let val = () => {
+      let inpname = document.querySelector("#name").value.trim();
+      let inpnumber = document.querySelector("#number").value.trim();
+      let inpemail = document.querySelector("#email").value.trim();
+      let inppassword = document.querySelector("#password").value.trim();
+      let inpcpass = document.querySelector("#con-password").value.trim();
+
+      let errname = document.querySelector("#errname");
+      let errnumber = document.querySelector("#errnumber");
+      let erremail = document.querySelector("#erremail");
+      let errpass = document.querySelector("#errpass");
+      let errlogin = document.querySelector("#errlogin");
+
+      // Clear previous errors
+      errname.innerHTML = "";
+      errnumber.innerHTML = "";
+      erremail.innerHTML = "";
+      errpass.innerHTML = "";
+      errlogin.innerHTML = "";
+
+      if (inpname === "") {
+        errname.innerHTML = "Please enter your name";
+        return false;
+      } else if (inpnumber === "") {
+        errnumber.innerHTML = "Please enter your number";
+        return false;
+      } else if (isNaN(inpnumber)) {
+        errnumber.innerHTML = "Number must be numeric";
+        return false;
+      } else if (inpnumber.length !== 10) {
+        errnumber.innerHTML = "Please enter a 10-digit number";
+        return false;
+      } else if (!inpemail.includes("@") || !inpemail.includes(".com")) {
+        erremail.innerHTML = "Please enter a valid email";
+        return false;
+      } else if (inppassword === "") {
+        errpass.innerHTML = "Please enter a password";
+        return false;
+      } else if (inppassword !== inpcpass) {
+        errlogin.innerHTML = "Passwords do not match";
+        return false;
+      }
+
+      document.querySelector("#statusMsg").innerHTML = "Form submitted successfully!";
+      return true;
+    }
+  </script>
 </body>
 </html>
-
-
-<!--if error return false in js
