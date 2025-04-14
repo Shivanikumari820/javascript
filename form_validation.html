@@ -191,8 +191,8 @@
         return false;
       } else if (inppassword !== inpcpass) {
         errlogin.innerHTML = "Passwords do not match";
-       document.querySelector("#con-password").value ="";             //confirm pass blank hojaye agr glt dala to 
-       document.querySelector("#con-password").focus();             //confirm pass pr cursor chla jaye by focus() function 
+       document.querySelector("#con-password").value ="";                  //confirm pass blank hojaye agr glt dala to 
+       document.querySelector("#con-password").focus();                   //confirm pass pr cursor chla jaye by focus() function 
         return false;
       }
       else if(!(inppassword.match([/1234567890/] && [/!@#$%^&*()_+/] && [/A-Z/] && [/a-z/])) )  {    //match means inme se ek hona chahiye
