@@ -13,9 +13,37 @@
         age: 19,
         city: "gurgaon"
     }
-    console.log(obj);    // To print full object
-    console.log(obj.name)  //shivani
+    // console.log(obj);    // To print full object
+    // console.log(obj.name)  //shivani
+
+        obj.college = "cybrom";     // insert value in object by new key
+    //    console.log(obj);    //  age: 19 city:"gurgaon" college: "cybrom" name:"shivani
+        obj.age = 20;            //update an object value of age 
+    // delete obj.name;         //To delete object key value 
+    
+
 
 </script>
 </body>
 </html>
+
+<!--    Object is a non-primitive datatype that give full information about data rather than array
+--<><><>  Destructring in js   = is a way to unpack values from objects into varibales , to make the code cleaner and easier to read and also quick access to object properties
+          let student = { name : "shivani", age: 19, city: "gurgaon" }
+
+    destructring the object   ------***  
+          let {name, age} = student ;
+    
+          console.log(name);     //shivani
+          console.log(age);       //19
+
+
+
+--<><><> Spread operator  =  (...) is used to "spread" the elements of an oject or array into another object and array
+          let student1 = { name : "shivani", age: 19, city: "gurgaon" }
+          let student2 = { name : "shivam", age: 20, city: "delhi" }
+          
+          const combined = {...student1, ...student2};
+          console.log(combined)         // output = {name: 'shivam', age: 20, city: 'delhi'}
+
+-->
