@@ -9,18 +9,24 @@
    <p id="click">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, voluptatem.
     Harum, ducimus ipsam maxime reprehenderit iusto dolor aliquam, ut adipisci ex voluptatum debitis magni dolore eligendi! Laudantium ut neque sed.</p> 
 
-     <button onclick="hideshow()" >click me</button>
+     <button  id="toggleButton" onclick="hideshow()" >Click me</button>
 
      <script>
-        document.querySelector("#click").value;
-        let hideshow = () => {
-                 if(style.display == none){
-                   style.display = "block"
-                 }
-                 else{
-                    style.display = "none"
-                 }
-        }
+      
+  function hideshow() {
+    let x = document.getElementById("click");
+    let button = document.getElementById("toggleButton");
+
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      button.textContent = "Hide";
+    } else {
+      x.style.display = "none";
+      button.textContent = "Show";
+
+    }
+  }
+
      </script>
 </body>
 </html>
