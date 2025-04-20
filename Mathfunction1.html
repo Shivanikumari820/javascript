@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1 id="heading"></h1>
+      
+    <script>
+         
+
+        // //  1. Math.abs(x) = Returns the absolute (positive) value of x
+        // Math.abs(-7); // 7
+
+        // // 2. Math.round(x) = Rounds x to the nearest integer.​
+        // Math.round(4.5); // 5
+        // Math.round(4.4); // 4
+
+        // // 3. Math.ceil(x) = Rounds x up to the next largest integer
+        // Math.ceil(4.2); // 5
+
+        // // 4. Math.floor(x)= Rounds x down to the next smallest integer.
+        // Math.floor(4.8); // 4
+
+        // // 5. Math.max(...values)= Returns the largest value among the provided arguments
+        // Math.max(10, 20, 30); // 30
+
+        // // 6. Math.min(...values) = Returns the smallest value among the provided arguments.
+        // Math.min(10, 20, 30); // 10
+        // // 7. Math.pow(base, exponent) = Returns the result of raising base to the power of exponent.​
+        // Math.pow(2, 3); // 8
+        // // 8. Math.sqrt(x) = Returns the square root of x.​
+        // Math.sqrt(16); // 4
+        // // 9. Math.random() = Returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).
+        // Math.random(); // e.g., 0.536
+        // // 10. Math.trunc(x) = Returns the integer part of x, removing any fractional digits.​
+        // Math.trunc(4.9); // 4
+        // Math.trunc(-4.9); // -4
+
+
+
+    // OTP generation till 4-digit ---->> 
+    function generateOTP() {
+      return Math.floor(1000 + Math.random() * 9000);
+    }
+
+    const otp = generateOTP();
+    const heading = document.getElementById("heading");
+    heading.innerHTML = "Your OTP is: " + otp;
+
+/* LOGIC ***
+    Suppose Math.random() returns 0.5678:​
+
+    Math.random() * 9000 = 0.5678 * 9000 = 5110.2    // 9000 ki jgh 1000 likhenge to otp 1 se hi stRT HOGI MEANS 1000 ki range m hi rhegi isliye 9000 kiya
+
+    1000 + 5110.2 = 6110.2
+
+     Math.floor(6110.2) = 6110​   */
+  </script>
+
+
+</body>
+</html>
