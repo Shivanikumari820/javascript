@@ -14,7 +14,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------        
 
-// For Each loop = Used in array and string  ----->>>
+// For-of loop = Used in array and string  ----->>>
         let arr1 = ["hello", "shivani", 1 ]
         for (let key of arr1){
             // console.log(key);        //hello shivani 1
@@ -68,7 +68,7 @@ let  num3 = [2, 3, 4, 5, 6,7,8,9]
 let num4 = [2, 3, 4, 5, 6, 7, 8, 9];
 
 num4.forEach((e) => {
-  console.log(e * 2 === 0);   //return string never return array 
+  console.log(e * 2);   //return string never return array 
 });
 
    

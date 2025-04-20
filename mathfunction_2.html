@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    h1 {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading"></h1>
+  <h1 id="time"></h1>
+
+  <script>
+    // Select elements
+    const heading = document.querySelector("#heading");
+    const time = document.querySelector("#time");
+
+    // Array of days
+    const dayArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    // Display current day
+    const currentDate = new Date();
+    const day = currentDate.getDay();
+    heading.innerHTML = dayArr[day];
+
+    // Update time every second
+    setInterval(() => {
+      const now = new Date();
+      time.innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+    }, 1000);
+
+    // Log current time and a random number to the console
+    console.log(currentDate.toTimeString());
+    console.log(Math.trunc(Math.random() * 10000));
+  </script>
+</body>
+</html>
