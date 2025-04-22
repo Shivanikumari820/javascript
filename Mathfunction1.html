@@ -43,7 +43,7 @@
 
     // OTP generation till 4-digit ---->> 
     function generateOTP() {
-      return Math.floor(1000 + Math.random() * 9000);
+      return Math.round(1000 + Math.random() * 9000);
     }
 
     const otp = generateOTP();
@@ -53,11 +53,11 @@
 /* LOGIC ***
     Suppose Math.random() returns 0.5678:​
 
-    Math.random() * 9000 = 0.5678 * 9000 = 5110.2    // 9000 ki jgh 1000 likhenge to otp 1 se hi stRT HOGI MEANS 1000 ki range m hi rhegi isliye 9000 kiya
+    Math.random() * 9000 = 0.5678 * 9000 = 5110.2      // 9000 ki jgh 1000 likhenge to otp 1 se hi start hogi means 1000 ki range m hi rhegi isliye 9000 kiya
 
     1000 + 5110.2 = 6110.2
 
-     Math.floor(6110.2) = 6110​   */
+     Math.round(6110.2) = 6110​   */
   </script>
 
 
