@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your name" id="name" >
+    <button onclick="sendData()">Send data</button>
+    <h1 id="ShowData"></h1>
+    <button onclick="removeData()">Remove data</button>
+
+
+    <script>
+        let sendData =() =>{
+       let inpname = document.querySelector("#name").value
+
+            localStorage.setItem("Name" , inpname)
+            localStorage.setItem("Age" , 20);
+            location.reload()                    //automatic page ko refresh krne k liye hame manually nhi krna pdega
+            document.querySelector("#ShowData").innerHTML = inpname;
+        }
+        
+        //agr localstorage ka data innerhtml pr show krna hoto 
+        let Show= document.querySelector("#ShowData")
+        Show.innerHTML = localStorage.getItem("Name")   //you can change data manually
+    //dono ko eksath dikhana h to ---->>>
+    //    let username = localStorage.getItem("Name")
+    //    let userage = localStorage.getItem("Age")
+
+    //    Show.innerHTML = `your name is ${username} and your Age is ${userage}`;
+
+
+        
+
+
+        //delete data manually 
+        let removeData =() =>{
+            // localStorage.removeItem("Name");
+            // localStorage.removeItem("Name");
+            localStorage.clear()  // pura ek sath clear krne k liye 
+            location.reload()
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
