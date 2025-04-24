@@ -6,23 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" placeholder="Enter your name" id="name" >
+    <input type="text" placeholder="Enter your name" id="inpname" >
+
     <button onclick="sendData()">Send data</button>
-    <h1 id="ShowData"></h1>
     <button onclick="removeData()">Remove data</button>
+    <h1 id="ShowData"></h1>
 
 
     <script>
         let sendData =() =>{
-       let inpname = document.querySelector("#name").value
+       let inpname = document.querySelector("#inpname").value
 
             localStorage.setItem("Name" , inpname)
             localStorage.setItem("Age" , 20);
             location.reload()                    //automatic page ko refresh krne k liye hame manually nhi krna pdega
-            document.querySelector("#ShowData").innerHTML = inpname;
         }
         
-        //agr localstorage ka data innerhtml pr show krna hoto 
+//agr localstorage ka data innerhtml pr show krna hoto 
         let Show= document.querySelector("#ShowData")
         Show.innerHTML = localStorage.getItem("Name")   //you can change data manually
     //dono ko eksath dikhana h to ---->>>
