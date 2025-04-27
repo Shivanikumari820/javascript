@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register & Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0072ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .container button:hover {
+      background-color: #005bb5;
+    }
+    .message {
+      margin-top: 10px;
+      text-align: center;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Register</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="contact" placeholder="Enter Contact No.">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="password" id="password" placeholder="Enter Password">
+    <input type="password" id="cpassword" placeholder="Confirm Password">
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function register() {
+      let name = document.getElementById("name").value.trim();
+      let contact = document.getElementById("contact").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let cpassword = document.getElementById("cpassword").value.trim();
+      let message = document.getElementById("message");
+
+      if (!name || !contact || !email || !password || !cpassword) {
+        message.style.color = "red";
+        message.innerText = "All fields are required!";
+        return;
+      }
+
+      if (password !== cpassword) {
+        message.style.color = "red";
+        message.innerText = "Passwords do not match!";
+        return;
+      }
+
+      // Save to LocalStorage
+      localStorage.setItem("name", name);
+      localStorage.setItem("contact", contact);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password); // Note: production me password encrypt krte hai
+
+      message.style.color = "green";
+      message.innerText = "Registration Successful!";
+      clearInputs();
+    }
+
+    function login() {
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let message = document.getElementById("message");
+
+      let storedEmail = localStorage.getItem("email");
+      let storedPassword = localStorage.getItem("password");
+
+      if (email === storedEmail && password === storedPassword) {
+        message.style.color = "green";
+        message.innerText = "Login Successful!";
+      } else {
+        message.style.color = "red";
+        message.innerText = "Invalid Credentials!";
+      }
+    }
+
+    function clearInputs() {
+      document.getElementById("name").value = "";
+      document.getElementById("contact").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("cpassword").value = "";
+    }
+  </script>
+
+</body>
+</html>
