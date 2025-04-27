@@ -56,7 +56,7 @@
 <body>
 
   <div class="container">
-    <h2>Register</h2>
+    <h2>Register & Login</h2>
     <input type="text" id="name" placeholder="Enter Name">
     <input type="text" id="contact" placeholder="Enter Contact No.">
     <input type="email" id="email" placeholder="Enter Email">
@@ -89,10 +89,13 @@
       }
 
       // Save to LocalStorage
-      localStorage.setItem("name", name);
-      localStorage.setItem("contact", contact);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password); // Note: production me password encrypt krte hai
+      let user = {
+        name: name,
+        contact: contact,
+        email: email,
+        password: password
+      };
+      localStorage.setItem("user", JSON.stringify(user));  // pura object save kiya hai
 
       message.style.color = "green";
       message.innerText = "Registration Successful!";
@@ -104,10 +107,9 @@
       let password = document.getElementById("password").value.trim();
       let message = document.getElementById("message");
 
-      let storedEmail = localStorage.getItem("email");
-      let storedPassword = localStorage.getItem("password");
+      let user = JSON.parse(localStorage.getItem("user"));
 
-      if (email === storedEmail && password === storedPassword) {
+      if (user && email === user.email && password === user.password) {
         message.style.color = "green";
         message.innerText = "Login Successful!";
       } else {
