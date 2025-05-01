@@ -1,0 +1,41 @@
+{
+    "user": [{
+        
+    "Name": "Shivani singh",
+    "Age" : "25",
+    "Check-in" : "25-12-2025",
+    "Check-out" : "30-12-2025",
+    "Person" : 4,
+    "Price" : 2000,
+    "City" : "Delhi"
+    },
+    
+    {
+    "Name": "Shivam singh",
+    "Age" : "22",
+    "Check-in" : "2-12-2025",
+    "Check-out" : "3-12-2025",
+    "Person" : 2,
+    "Price" : 1000,
+    "City" : "Noida"}, 
+    
+    {
+    "Name": "Vijay",
+    "Age" : "20",
+    "Check-in" : "21-12-2025",
+    "Check-out" : "31-12-2025",
+    "Person" : 5,
+    "Price" : 5000,
+    "City" : "Bhopal"
+    }, 
+
+    {
+    "Name": "Shivanki singh",
+    "Age" : "27",
+    "Check-in" : "23-12-2025",
+    "Check-out" : "27-12-2025",
+    "Person" : 1,
+    "Price" : 1000,
+    "City" : "Gudgaon"
+    }]
+}
