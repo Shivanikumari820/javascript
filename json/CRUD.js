@@ -9,21 +9,19 @@ let fetchData = async () => {
 
   data.map((e) => {
     dataShow.innerHTML += `
-        <tr>
-            <td>${e.Name}</td>
-            <td>${e.Age}</td>
-            <td>${e.Check_in}</td>
-            <td>${e.Check_out}</td>
-            <td>${e.Person}</td>
-            <td>${e.City}</td>
-            <td>${
-              e.Price * e.Person
-            }</td>                                            
-            <td onclick="Del('${e.id}')"> Delete </td>
-            <td onclick="Formopen('${ e.id }')"> Update</td>        
-
-        </tr>
-        `;
+    <tr>
+      <td>${e.Name}</td>
+      <td>${e.Age}</td>
+      <td>${e.Check_in}</td>
+      <td>${e.Check_out}</td>
+      <td>${e.Person}</td>
+      <td>${e.City}</td>
+      <td>${e.Price * e.Person}</td>
+      <td><button onclick="Del('${e.id}')">Delete</button></td>
+      <td><button onclick="Formopen('${e.id}')">Update</button></td>
+    </tr>
+  `;
+  
   });
 };
 
@@ -67,7 +65,8 @@ let Book = () => {
       Price: 500,
     }),
   });
-
+  
+  fetchData()
   location.href = "CRUD.html";
   return false;
 };
@@ -81,28 +80,22 @@ let Formopen = async (id) => {
 
   //form dikhana h update pr click krne pr -->
   let Update = document.querySelector("#Updateform");
-  let formshow = `  Enter Name: <input type="text" id="upname"  value ="${data.Name}"/> <br />
-      <br />
-      Enter Age: <input type="text" id="upage" value ="${data.Age}"/> <br /><br />
-      Enter Check in Date: <input type="Date" id="upcheckin" value ="${data.Checkin}" /> <br />
-      <br />
-      Enter Check out Date: <input type="Date" id="upcheckout" value ="${data.Checkout}"/> <br />
-      <br />
-      Select City:
-      <select id="upcity">
-        <br />
-        <br />
-        <option value="Bhopal">Bhopal</option>
-        <option value="Delhi">Delhi</option>
-        <option value="Indore">Indore</option>
-        <option value="Noida">Noida</option>
-      </select>
-      <br />
-      <br />
-      Enter Person: <input type="text" id="upperson" value ="${data.Person}"/> <br />
-      <br />
-      <input type="text" value="Update Data" onclick="return Update('${data.id})" />
-`;
+  Update.innerHTML = `
+    Enter Name: <input type="text" id="upname" value="${data.Name}" /><br /><br />
+    Enter Age: <input type="text" id="upage" value="${data.Age}" /><br /><br />
+    Enter Check in Date: <input type="date" id="upcheckin" value="${data.Check_in}" /><br /><br />
+    Enter Check out Date: <input type="date" id="upcheckout" value="${data.Check_out}" /><br /><br />
+    Select City:
+    <select id="upcity">
+      <option value="Bhopal">Bhopal</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Indore">Indore</option>
+      <option value="Noida">Noida</option>
+    </select><br /><br />
+    Enter Person: <input type="text" id="upperson" value="${data.Person}" /><br /><br />
+    <button onclick="return UpdateData('${data.id}')">Update Data</button>
+  `;
+  
 };
 
 let Update = (id) => {
