@@ -1,4 +1,5 @@
 let fetchData = async () => {
+  try{
   let url = "http://localhost:3000/user";
 
   let res = await fetch(url, { method: "GET" });
@@ -23,7 +24,14 @@ let fetchData = async () => {
   `;
   
   });
-};
+
+}
+catch(error){
+  console.log("net slow");
+}
+
+
+}
 
 // person se price multiply hoga jo hamne price bhra h niche
 
