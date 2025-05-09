@@ -1,14 +1,31 @@
 let fetchData = async () => {
-  try{
+
   let url = "http://localhost:3000/user";
 
   let res = await fetch(url, { method: "GET" });
   let data = await res.json();
+  DataShow(data)
+  }
 
+//search input me jo likhe vo data phle aajaye uske liye ye kiya --> by get data and fetch them and use filter data = > after filter use includes method ki includes means vo data h ki nhi like string me kiya tha na 
+  let Searchh = async() => {
+   let searchinp=  document.querySelector("#searchinp").value.toLowerCase();
+    
+  let url = "http://localhost:3000/user";
+  let res = await fetch(url, { method: "GET" });
+  let data = await res.json();
+
+  let FilterData = data.filter((e) =>{
+        return  e.Name.toLowerCase().includes(searchinp)||e.Age.toString().includes(searchinp)
+  })
+   DataShow(FilterData)                //datashow me sirf filter wala data dikh jaye uske liye direct filter pass kr diya 
+  }
+
+  let DataShow=(dataaarhah) =>{  //jo data filter krke aara h vhi data yha parameter me pass kiya h 
   //data jo db.json pr h usko table format me front screen pr show krne k liye use array of object => map
   let dataShow = document.querySelector("#datashow");
-
-  data.map((e) => {
+   dataShow.innerHTML = ""    //jb search kre tb baaki innerhtml ko empty kr do
+  dataaarhah.map((e) => {
     dataShow.innerHTML += `
     <tr>
       <td>${e.Name}</td>
@@ -26,12 +43,7 @@ let fetchData = async () => {
   });
 
 }
-catch(error){
-  console.log("net slow");
-}
 
-
-}
 
 // person se price multiply hoga jo hamne price bhra h niche
 
